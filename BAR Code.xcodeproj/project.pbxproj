@@ -289,11 +289,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46R9VD747A;
 				INFOPLIST_FILE = "BAR Code/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud.mansapratap.BAR-Code";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mansapratap.BARCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -308,11 +309,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46R9VD747A;
 				INFOPLIST_FILE = "BAR Code/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud.mansapratap.BAR-Code";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mansapratap.BARCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

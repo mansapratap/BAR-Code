@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9cF-dM-Mff">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Code Scanner-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BAR_Code" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text Or Number" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kde-v7-TX3">
+                                <rect key="frame" x="20" y="145" width="374" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NLR-2p-lDQ">
+                                <rect key="frame" x="20" y="187" width="374" height="32"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="QR Code Generator"/>
+                                    <segment title="Bar Code Generator"/>
+                                </segments>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8zY-KS-itF">
+                                <rect key="frame" x="60" y="301" width="294" height="294"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8zY-KS-itF" secondAttribute="height" multiplier="1:1" id="OHl-av-vdK"/>
+                                    <constraint firstAttribute="width" constant="294" id="tjM-Nv-dig"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G47-Ya-zB0">
+                                <rect key="frame" x="82" y="772" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T8o-f1-agz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="udt-C7-5GB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Generate Code">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQI-iO-ekJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.20538072183098591" green="0.67140735035211263" blue="0.70796654929577463" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="G47-Ya-zB0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="499-6b-cY8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NLR-2p-lDQ" secondAttribute="trailing" constant="20" id="5kI-D4-Qec"/>
+                            <constraint firstItem="NLR-2p-lDQ" firstAttribute="top" secondItem="Kde-v7-TX3" secondAttribute="bottom" constant="8" symbolic="YES" id="8SA-xi-UlO"/>
+                            <constraint firstItem="Kde-v7-TX3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BOb-oC-w4X"/>
+                            <constraint firstItem="NLR-2p-lDQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C8y-gh-e4W"/>
+                            <constraint firstItem="Kde-v7-TX3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="G5q-dP-z5h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kde-v7-TX3" secondAttribute="trailing" constant="20" id="M2G-5e-ZS0"/>
+                            <constraint firstItem="8zY-KS-itF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o7H-LV-CGp"/>
+                            <constraint firstItem="8zY-KS-itF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uzJ-hs-785"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G47-Ya-zB0" secondAttribute="bottom" constant="40" id="xGF-CJ-V3r"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Code Scanner" id="eVL-Xv-N5z"/>
+                    <connections>
+                        <outlet property="generateButton" destination="G47-Ya-zB0" id="Hnl-x9-ein"/>
+                        <outlet property="imageView" destination="8zY-KS-itF" id="sR8-XE-LFA"/>
+                        <outlet property="imageWidth" destination="tjM-Nv-dig" id="xaN-jg-K30"/>
+                        <outlet property="segment" destination="NLR-2p-lDQ" id="EGG-zz-khP"/>
+                        <outlet property="textField" destination="Kde-v7-TX3" id="EJl-N3-SjX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="726.08695652173924" y="76.339285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KXW-eY-oAL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9cF-dM-Mff" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Vm7-vk-GtD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.69242405891418457" blue="0.83899998664855957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aVH-ex-M1Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8O0-5B-sYD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9" y="75"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
